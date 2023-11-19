@@ -1,0 +1,27 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @{
+        foreach (var k in Model)
+        {
+            <tr>
+                <td>@k.KategoriId</td>
+                <td>@k.KategoriAd</td>
+                <td><button class="btn btn-danger">Sil</button></td>
+                <td><button class="btn btn-success">Güncelle</button></td>
+            </tr>
+        }
+    }
+</table>
+<a href="#" class="btn btn-primary">Kategori Ekle</a>
