@@ -1,0 +1,35 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Kategori
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<title>Kategori Güncelleme Sayfası</title>
+<br />
+<h1>Kategori Güncelle</h1>
+<br />
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post, new { onsubmit = "return bosMu();" }))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.KategoriId)
+        @Html.LabelFor(x => x.KategoriAd)
+        @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control", id = "kategoriAd" })
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+
+    <script>
+        function bosMu() {
+            let kategoriAd = document.getElementById("kategoriAd").value
+            if (kategoriAd == "") {
+                alert("Boş Geçilmez!")
+                return false
+            }
+            else {
+                alert("Ürün güncelleme başarılı!")
+                return true
+            }
+
+        }
+    </script>
+}
+

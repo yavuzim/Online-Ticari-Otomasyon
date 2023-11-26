@@ -18,10 +18,10 @@
             <tr>
                 <td>@k.KategoriId</td>
                 <td>@k.KategoriAd</td>
-                <td><button class="btn btn-danger">Sil</button></td>
-                <td><button class="btn btn-success">Güncelle</button></td>
+                <td><a href="/Kategori/KategoriSil/@k.KategoriId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Kategori/KategoriGetir/@k.KategoriId" class="btn btn-success">Güncelle</a></td>
             </tr>
         }
     }
 </table>
-<a href="#" class="btn btn-primary">Kategori Ekle</a>
+<a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>

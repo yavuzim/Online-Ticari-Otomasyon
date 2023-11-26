@@ -1,8 +1,27 @@
-﻿
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Kategori
 @{
     ViewBag.Title = "KategoriEkle";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <title>Kategori Ekle</title>
+<br />
+<h1>Yeni Kategori Ekle</h1>
+<br />
+<form class="form-group" method="post" onsubmit="return bosMu()">
+    @Html.LabelFor(x => x.KategoriAd)
+    @Html.TextBoxFor(x => x.KategoriAd, new { @class="form-control", id="kategoriAd"})
+    <br />
+    <button class="btn btn-info">Ekle</button>
+</form>
 
+<script>
+    function bosMu() {
+        let kategoriAd = document.getElementById("kategoriAd").value
+        if (kategoriAd == "") {
+            alert("Boş Değer Girilmez!!")
+            return false;
+        }
+        return true;
+    }
+</script>
